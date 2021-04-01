@@ -1,3 +1,3 @@
-module pkg.go.dev/time
+module std
 
 go 1.13
