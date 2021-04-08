@@ -78,4 +78,15 @@ func hash_block(b Block) []byte {
 }
 
 
-
+func (bc Blockchain) print_chain() {
+	for _, b := range bc.chain {
+		fmt.Println("block index: ", b.index)
+		fmt.Println("	timestamp: ", b.timestamp.Format(time.UnixDate))
+		fmt.Println("	transactions:\n")
+		for _, t := range b.transactions {
+			fmt.Println("\t\tsender: ", t.sender)
+			fmt.Println("\t\trecipient: ", t.recipient)
+			fmt.Println("\t\tamount: ", t.amount)
+		}
+	}
+}
